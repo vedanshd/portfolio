@@ -1,0 +1,24 @@
+.typing-animation-container {
+  display: inline-flex;
+  align-items: center;
+}
+
+.typing-text {
+  white-space: pre;
+  overflow: hidden;
+}
+
+.typing-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
