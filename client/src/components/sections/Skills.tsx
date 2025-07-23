@@ -5,31 +5,27 @@ export function Skills() {
   const skillCategories = [
     {
       category: "Programming Languages",
-      skills: ["Python", "Java", "JavaScript", "C++"]
+      skills: ["Python", "Java", "C++", "C", "JavaScript", "TypeScript", "HTML", "CSS"]
     },
     {
-      category: "Web Development",
-      skills: ["React.js", "FastAPI", "Full-Stack Development"]
-    },
-    {
-      category: "Cloud & DevOps",
-      skills: ["Amazon Web Services (AWS)", "Linux"]
-    },
-    {
-      category: "AI & Machine Learning",
-      skills: ["Natural Language Processing (NLP)", "Generative AI", "Azure AI Studio"]
+      category: "Frameworks & Libraries",
+      skills: ["React.js", "Express.js", "Tailwind CSS", "FastAPI"]
     },
     {
       category: "Databases",
-      skills: ["Oracle Database"]
+      skills: ["MySQL", "PostgreSQL", "Oracle Database", "MongoDB", "SQL & PL/SQL"]
     },
     {
-      category: "Other Technologies",
-      skills: ["Android Development", "Computer Networking", "Data Structures"]
+      category: "Cloud & DevOps",
+      skills: ["AWS fundamentals (EC2, S3)", "Version Control: Git & GitHub"]
     },
     {
-      category: "Soft Skills",
-      skills: ["Communication", "Analytical Skills", "Problem-solving"]
+      category: "AI & ML",
+      skills: ["Natural Language Processing (NLP)", "Machine Learning", "OpenAI API"]
+    },
+    {
+      category: "Other",
+      skills: ["Microsoft Office Suite", "Agile & Scrum methodologies", "Basics of networking"]
     }
   ];
 

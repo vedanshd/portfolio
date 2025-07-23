@@ -12,6 +12,7 @@ export function Navbar() {
     "Experience",
     "Projects",
     "Skills",
+    "Certifications",
   ];
 
   const { toast } = useToast();

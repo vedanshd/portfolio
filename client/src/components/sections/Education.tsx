@@ -8,8 +8,8 @@ export function Education() {
       period: "2022-2026, Expected",
       degree: "B.Tech in Computer Science",
       details: [
-        "CGPA: 9.15",
-        "S Grade in Basic Electrical Engineering, Technical English, Java Programming, Operating Systems",
+        "CGPA: 9.13",
+        "S Grade in Basic Electrical Engineering, Technical English, Java Programming, Operating Systems and Embedded Systems",
         "Core Committee Member of Blockchain Community and VIT Model United Nations Society",
         "Member of Google Developers Student Club & Apple Developers Group"
       ]
@@ -19,10 +19,10 @@ export function Education() {
       period: "2013-2022",
       degree: "Class 12th: 90% | Class 10th: 98.4%",
       details: [
-        "National Topper in Mathematics & IT",
-        "Gold Medalist for Academic Excellence",
-        "Leader of School Tech Club",
-        "MUN Participant & Photography Enthusiast"
+        "School House Captain",
+        "Active Member of Model United Nations Society",
+        "Participated in inter-school debates and leadership programs",
+        "National Topper in Mathematics & IT"
       ]
     }
   ];

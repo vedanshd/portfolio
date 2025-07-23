@@ -7,11 +7,11 @@ export function Experience() {
     position: "Software Intern",
     period: "May 2024 – July 2024",
     responsibilities: [
-      "Telecommunication Fundamentals – Strong knowledge of network operations & mobile communication protocols",
-      "Linux Proficiency – Experience with command-line operations, scripting, and system administration",
-      "Python Programming – Built automation scripts, data analysis pipelines, and efficiency-improving tools",
-      "Software Testing & Troubleshooting – Developed test cases to enhance software reliability & optimize network performance",
-      "Cross-Functional Collaboration – Worked with diverse teams to improve network efficiency and service quality"
+      "Developed Python-based automation scripts for network diagnostics, reducing manual effort by 40% and improving troubleshooting efficiency by 30%",
+      "Executed over 100 test cases for telecom software validation, improving system reliability and reducing critical bugs by 25%",
+      "Collaborated with cross-functional engineering teams to analyze and optimize mobile network protocols, resulting in 20% faster issue resolution across key modules",
+      "Enhanced Linux system administration workflows through scripting, increasing daily telecom task efficiency by 35%",
+      "Accelerated understanding of telecom architecture and network KPIs, contributing to a 15% improvement in monitoring accuracy during live network simulations"
     ]
   };
 

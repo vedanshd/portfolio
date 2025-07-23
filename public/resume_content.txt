@@ -1,21 +1,19 @@
-Vedansh Dhawan
-Email: vedanshd04@gmail.com
-Mobile: +91 9599036305
-linkedin.com/in/vedansh-dhawan-50a860323
+VEDANSH DHAWAN
++91 9599036305 ⋄ Vellore, Tamil Nadu, India
+vedanshd04@gmail.com ⋄ linkedin ⋄ portfolio-website
 
-Summary:
-Ambitious Computer Science student at VIT with experience as a Software Intern at Ericsson. Skilled in Python, Java, and Linux, with a strong foundation in telecommunication fundamentals and network infrastructure. Passionate about applying new technologies to solve real-world problems, with a focus on AI, machine learning, and full-stack development.
+SUMMARY
+Aspiring software engineer with solid experience in full-stack development, AI/ML, and telecom systems. Proficient in Python, Java, C++, and React with hands-on project delivery using modern frameworks and APIs. Successfully interned at Ericsson, automating telecom diagnostics and improving system efficiency. Strong academic background with leadership and cross-functional collaboration experience.
 
-Education:
-Vellore Institute of Technology (VIT), Vellore, Tamil Nadu
-Bachelor of Technology in Computer Science; CGPA: 9.15 (Sep 2022 – Aug 2026 Expected)
-Achievements: Achieved S grade (highest possible) in Basic Electrical Engineering, Technical English, Java Programming, and Operating Systems
-Activities: Core Committee Member of Blockchain Community and VIT Model United Nations Society; Member of Google Developers Student Club and Apple Developers Group
+EDUCATION
+Bachelor's of Computer Science, VIT Vellore CGPA: 9.13 Expected 2026
+◦ Achievements: Achieved S grade (highest possible) in Basic Electrical Engineering, Technical English, Java Programming, Operating Systems and Embedded Systems
+◦ Activities: Core Committee Member of Blockchain Community and VIT Model United Nations Society; Member of Google Developers Student Club and Apple Developers Group
 
-Delhi Public School, Gurgaon
-Class 12th - 90%, Class 10th - 98.4% (Apr 2013 – Apr 2022)
-Achievements: National Topper in Mathematics & IT; Gold Medalist for Academic Excellence
-Activities: 2nd Prize in Photography and Editing Competition; Active participant in Model United Nations (MUN); Leader of the school tech club
+Senior Secondary Education, Delhi Public School, Gurgaon
+◦ Academics: Scored 90% in Class 12 (CBSE) and 98.4% in Class 10 (CBSE)
+◦ Achievements: School House Captain; Active Member of Model United Nations Society
+◦ Activities: Participated in inter-school debates and leadership programs
 
 Experience:
 Ericsson, Noida, Uttar Pradesh
