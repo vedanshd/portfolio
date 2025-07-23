@@ -45,8 +45,14 @@ export function Hero() {
           transition={{ delay: 0.2 }}
           className="flex justify-center gap-4"
         >
-          <Button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
-            Get in Touch
+          <Button asChild>
+            <a 
+              href="https://www.linkedin.com/in/vedansh-dhawan-50a860323/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get in Touch
+            </a>
           </Button>
           <Button variant="outline" asChild>
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
