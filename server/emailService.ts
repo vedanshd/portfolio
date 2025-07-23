@@ -16,7 +16,7 @@ export class EmailService {
       console.log('📧 Email user configured:', process.env.EMAIL_USER ? 'Yes' : 'No');
       console.log('🔑 Email password configured:', process.env.EMAIL_PASS ? 'Yes' : 'No');
       
-      this.transporter = nodemailer.createTransporter({
+      this.transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
           user: process.env.EMAIL_USER, // Your Gmail address
@@ -101,7 +101,7 @@ Sent from portfolio contact form on ${new Date().toLocaleString()}
             
             <p>In the meantime, feel free to:</p>
             <ul>
-              <li>Connect with me on <a href="https://linkedin.com/in/vedansh-dhawan-50a860323" style="color: #007bff;">LinkedIn</a></li>
+              <li>Connect with me on <a href="https://www.linkedin.com/in/vedansh-dhawan/" style="color: #007bff;">LinkedIn</a></li>
               <li>Check out my projects on my portfolio</li>
               <li>Email me directly at vedanshd04@gmail.com</li>
             </ul>
@@ -127,7 +127,7 @@ Thank you for reaching out through my portfolio website! I've received your mess
 Your message: "${contactData.message}"
 
 In the meantime, feel free to:
-- Connect with me on LinkedIn: https://linkedin.com/in/vedansh-dhawan-50a860323
+- Connect with me on LinkedIn: https://www.linkedin.com/in/vedansh-dhawan/
 - Email me directly at vedanshd04@gmail.com
 
 Looking forward to connecting with you!

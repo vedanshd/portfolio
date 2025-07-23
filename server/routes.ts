@@ -5,6 +5,7 @@ import path from "path";
 import fs from "fs";
 import { generateChatResponse as generateGeminiResponse } from "./gemini";
 import { generateChatResponse as generateLocalResponse } from "./localQA";
+import { emailService } from "./emailService";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Serve static files from the public directory
@@ -109,17 +110,57 @@ Honors & Awards:
     }
   });
 
+  // Contact form API endpoint
+  app.post("/api/contact", async (req, res) => {
+    try {
+      const { name, email, subject, message } = req.body;
+      
+      if (!name || !email || !subject || !message) {
+        return res.status(400).json({ error: "All fields are required" });
+      }
+
+      // Log the contact form submission
+      console.log("📧 Contact form submission:", {
+        name,
+        email,
+        subject,
+        timestamp: new Date().toISOString()
+      });
+
+      // Send email using the email service
+      const emailSent = await emailService.sendContactEmail({
+        name,
+        email,
+        message: `Subject: ${subject}\n\n${message}`
+      });
+
+      if (emailSent) {
+        console.log("✅ Contact email sent successfully");
+        res.json({ success: true, message: "Thank you for your message! I'll get back to you soon." });
+      } else {
+        console.log("❌ Failed to send contact email");
+        res.json({ success: true, message: "Message received! I'll get back to you soon." }); // Still show success to user
+      }
+    } catch (error) {
+      console.error("❌ Error in contact API:", error);
+      res.status(500).json({ error: "Failed to process contact request" });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }
 
-// Smart chat function that tries Gemini first, then falls back to local Q&A
+// Using local Q&A system (Gemini temporarily disabled due to API issues)
 async function generateChatResponse(message: string, resumeContent: string): Promise<string> {
+  console.log("Using local Q&A system");
+  return await generateLocalResponse(message, resumeContent);
+  
+  // Uncomment below to re-enable Gemini when API issues are resolved:
+  /*
   try {
-    // First, try Gemini AI
     const geminiResponse = await generateGeminiResponse(message, resumeContent);
     
-    // If the response contains error messages, fall back to local Q&A
     if (geminiResponse.includes("Sorry, I encountered an error") || 
         geminiResponse.includes("AI service is not currently configured") ||
         geminiResponse.includes("AI service configuration")) {
@@ -130,7 +171,7 @@ async function generateChatResponse(message: string, resumeContent: string): Pro
     return geminiResponse;
   } catch (error) {
     console.log("Gemini API error, falling back to local Q&A:", error);
-    // Fallback to local Q&A system
     return await generateLocalResponse(message, resumeContent);
   }
+  */
 }
