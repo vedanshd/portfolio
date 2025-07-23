@@ -6,10 +6,11 @@ const gemini = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
 // This function will generate a response from Gemini AI based on the resume content and user query
 export async function generateChatResponse(query: string, resumeContent: string): Promise<string> {
   try {
-    console.log("API Key loaded:", process.env.GEMINI_API_KEY ? `${process.env.GEMINI_API_KEY.substring(0, 10)}...` : "NOT SET");
+    console.log("API Key loaded:", process.env.GEMINI_API_KEY ? `${process.env.GEMINI_API_KEY.substring(0, 10)}..." : "NOT SET");
     
-    if (!process.env.GEMINI_API_KEY) {
-      throw new Error("GEMINI_API_KEY is not configured");
+    if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY.trim() === '') {
+      console.log("Gemini API key not configured, returning fallback message");
+      return "I'm sorry, the AI chat service is not currently configured. Please use the contact form to reach out directly.";
     }
 
     const model = gemini.getGenerativeModel({ 

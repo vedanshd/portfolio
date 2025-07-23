@@ -16,6 +16,11 @@ export class EmailService {
       console.log('📧 Email user configured:', process.env.EMAIL_USER ? 'Yes' : 'No');
       console.log('🔑 Email password configured:', process.env.EMAIL_PASS ? 'Yes' : 'No');
       
+      if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+        console.log('⚠️ Email credentials not fully configured');
+        throw new Error('Email service not configured');
+      }
+      
       this.transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
