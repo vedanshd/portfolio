@@ -14,8 +14,7 @@ export function Projects() {
         "Animated UI components using Framer Motion",
         "Contact form with backend integration and email notifications",
         "Fully SEO-optimized and deployed via Vercel"
-      ],
-      link: "Live Demo"
+      ]
     },
     {
       name: "VDreamScape – AI-Powered Dream Analysis App", 
@@ -28,8 +27,7 @@ export function Projects() {
         "Responsive UI design with seamless light/dark theme switching",
         "Integrated OpenAI API with intelligent fallback mechanisms for graceful degradation",
         "Deployed with optimized performance and user experience"
-      ],
-      link: "Live Demo"
+      ]
     }
   ];
 
@@ -55,18 +53,11 @@ export function Projects() {
                   </p>
                 </CardHeader>
                 <CardContent>
-                  <ul className="list-disc list-inside space-y-2 mb-4">
+                  <ul className="list-disc list-inside space-y-2">
                     {project.details.map((detail, i) => (
                       <li key={i} className="text-sm leading-relaxed">{detail}</li>
                     ))}
                   </ul>
-                  {project.link && (
-                    <div className="flex justify-end">
-                      <span className="text-primary font-medium text-sm cursor-pointer hover:underline">
-                        {project.link}
-                      </span>
-                    </div>
-                  )}
                 </CardContent>
               </Card>
             </motion.div>
