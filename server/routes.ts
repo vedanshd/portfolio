@@ -1,13 +1,10 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
-import { insertMessageSchema } from "@shared/schema";
 import express from "express";
 import path from "path";
 import fs from "fs";
 import { generateChatResponse as generateGeminiResponse } from "./gemini";
 import { generateChatResponse as generateLocalResponse } from "./localQA";
-import { emailService } from "./emailService";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Serve static files from the public directory
@@ -18,43 +15,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.sendFile(path.join(process.cwd(), 'public', 'resume.pdf'));
   });
   
-  app.post("/api/contact", async (req, res) => {
-    try {
-      const data = insertMessageSchema.parse(req.body);
-      
-      // Store the message in memory (for backup)
-      const message = await storage.createMessage(data);
-      
-      // Send email notification
-      const emailSent = await emailService.sendContactEmail({
-        name: data.name,
-        email: data.email,
-        message: data.message
-      });
-      
-      if (emailSent) {
-        console.log('✅ Contact form email sent successfully');
-        res.json({ 
-          success: true, 
-          message: "Your message has been sent successfully! I'll get back to you soon.",
-          data: message 
-        });
-      } else {
-        console.log('⚠️ Email failed but message stored');
-        res.json({ 
-          success: false, 
-          message: "Your message was saved but email delivery failed. Please try contacting me via LinkedIn.",
-          data: message 
-        });
-      }
-    } catch (error) {
-      console.error('Contact form error:', error);
-      res.status(400).json({ 
-        success: false, 
-        error: "Invalid request data or email service error" 
-      });
-    }
-  });
 
   // Get resume content from the text file for the chatbot context
   const resumeFilePath = path.join(process.cwd(), 'public', 'resume_content.txt');
