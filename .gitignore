@@ -39,3 +39,6 @@ dist/
 build/
 .vercel
 *.zip
+
+# Test files
+test-gemini-integration.js
