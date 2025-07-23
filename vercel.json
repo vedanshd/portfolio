@@ -17,10 +17,7 @@
     }
   ],
   "env": {
-    "NODE_ENV": "production",
-    "GEMINI_API_KEY": "@gemini_api_key",
-    "EMAIL_USER": "@email_user",
-    "EMAIL_PASS": "@email_pass"
+    "NODE_ENV": "production"
   }
 }
 
