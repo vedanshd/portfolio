@@ -8,9 +8,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { insertMessageSchema } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
 import { FaLinkedin } from "react-icons/fa";
+import { useState } from "react";
 
 export function Contact() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm({
     resolver: zodResolver(insertMessageSchema),
     defaultValues: {
@@ -20,13 +22,37 @@ export function Contact() {
     }
   });
 
-  const onSubmit = form.handleSubmit((data) => {
-    // For GitHub Pages, we'll just show a message since there's no backend
-    toast({
-      title: "Contact Form Submitted!",
-      description: "Please reach out to me via LinkedIn for now. Backend functionality will be available in the full deployment.",
-    });
-    form.reset();
+  const onSubmit = form.handleSubmit(async (data) => {
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your message. I'll get back to you soon!",
+        });
+        form.reset();
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to send message');
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to send message. Please try again or contact me via LinkedIn.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   });
 
   return (
@@ -81,8 +107,9 @@ export function Contact() {
                 <Button
                   type="submit"
                   className="w-full"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
               <div className="mt-6 flex justify-center">

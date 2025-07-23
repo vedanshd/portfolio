@@ -1,0 +1,65 @@
+I want to create a modern portfolio website using HTML, CSS, JavaScript, and React that is clean, modular, and professional. The design should be inspired by Apple’s minimalistic aesthetic, featuring neutral colors, smooth animations, intuitive UI, and a responsive layout. The website should be well-structured with modular React components for scalability and easy maintenance.
+
+Website Structure & Sections:
+1. Home Page:
+A sleek, welcoming landing page introducing me with a professional hero section featuring my name, title (Computer Science Engineer | AI & Full-Stack Developer), and a brief tagline about my skills.
+A subtle background animation or interactive element to add modern appeal.
+2. About Me:
+A brief personal introduction, summarizing my background as a Computer Science student at VIT Vellore with experience as a Software Intern at Ericsson.
+Highlight my expertise in Python, Java, JavaScript, C++, AI/ML, Web Development, and Networking.
+Emphasize my passion for solving real-world problems through AI, full-stack development, and automation.
+3. Education:
+VIT Vellore (2022-2026, Expected) - B.Tech in Computer Science, CGPA: 9.15
+Key Achievements:
+S Grade (Highest) in Basic Electrical Engineering, Technical English, Java Programming, Operating Systems.
+Extracurriculars:
+Core Committee Member of Blockchain Community and VIT Model United Nations Society.
+Member of Google Developers Student Club & Apple Developers Group.
+Delhi Public School, Gurgaon (2013-2022)
+Class 12th: 90% | Class 10th: 98.4%
+Awards & Honors:
+National Topper in Mathematics & IT (Full marks in national final exams).
+Gold Medalist for Academic Excellence.
+Leadership Roles:
+Leader of School Tech Club.
+MUN Participant & Photography Enthusiast.
+4. Experience:
+Software Intern at Ericsson (May 2024 – July 2024)
+Telecommunication Fundamentals – Strong knowledge of network operations & mobile communication protocols.
+Linux Proficiency – Experience with command-line operations, scripting, and system administration.
+Python Programming – Built automation scripts, data analysis pipelines, and efficiency-improving tools.
+Software Testing & Troubleshooting – Developed test cases to enhance software reliability & optimize network performance.
+Cross-Functional Collaboration – Worked with diverse teams to improve network efficiency and service quality.
+5. Projects:
+GenHack Hackathon – 4th Place | Gen AI Medical Chatbot (Feb 2024)
+Built an AI-powered medical chatbot using Hugging Face’s NLP models.
+Implemented sentiment analysis & intent recognition for accurate responses.
+Developed a full-stack solution using FastAPI (backend), React (frontend), and AWS Lambda (deployment).
+Ranked 4th out of 100+ teams in the GenHack AI Hackathon (ISA-VIT Organized).
+6. Skills:
+Programming Languages: Python, Java, JavaScript, C++.
+Web Development: React.js, FastAPI, Full-Stack Development.
+Cloud & DevOps: Amazon Web Services (AWS), Linux.
+AI & Machine Learning: Natural Language Processing (NLP), Generative AI, Azure AI Studio.
+Databases: Oracle Database.
+Other Technologies: Android Development, Computer Networking, Data Structures.
+Soft Skills: Communication, Analytical Skills, Problem-solving.
+7. Certifications:
+Career Essentials in Generative AI (Microsoft & LinkedIn, Feb 2025).
+Microsoft Azure AI Essentials Professional Certificate (Microsoft & LinkedIn, Feb 2025).
+8. Honors & Awards:
+Gold Medal – Recognized for academic excellence at Delhi Public School Gurgaon (2022).
+National Topper in Mathematics & IT – Full marks in 10th Board Exams (2022).
+Photography & Editing Competition – 2nd Prize (Blue Bells Public School, Gurgaon, 2019).
+9. Contact Me:
+A contact form where visitors can email me directly or submit inquiries (Option to save input to an Excel file or send as an email).
+Download Resume Button – Users should be able to download my latest resume in PDF format.
+LinkedIn Button – A clickable icon linking to my LinkedIn profile:
+https://www.linkedin.com/in/vedansh-dhawan-50a860323/
+Additional Features & Design Considerations:
+Dark/Light Mode Toggle – For better accessibility.
+Smooth Animations & Hover Effects – Add a polished look.
+Mobile-Friendly & Optimized Performance – Ensure fast loading, clean UI, and SEO best practices.
+Minimalistic UI – Keep the website sleek, distraction-free, and highly functional.
+Ensure the project follows best practices for clean, reusable, and well-documented code."
+

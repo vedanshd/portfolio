@@ -5,9 +5,7 @@ import { insertMessageSchema } from "@shared/schema";
 import express from "express";
 import path from "path";
 import fs from "fs";
-import { generateChatResponse as generateGeminiResponse } from "./gemini";
-import { generateChatResponse as generateLocalResponse } from "./localQA";
-import { emailService } from "./emailService";
+import { generateChatResponse } from "./localQA";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Serve static files from the public directory
@@ -21,38 +19,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/contact", async (req, res) => {
     try {
       const data = insertMessageSchema.parse(req.body);
-      
-      // Store the message in memory (for backup)
       const message = await storage.createMessage(data);
-      
-      // Send email notification
-      const emailSent = await emailService.sendContactEmail({
-        name: data.name,
-        email: data.email,
-        message: data.message
-      });
-      
-      if (emailSent) {
-        console.log('✅ Contact form email sent successfully');
-        res.json({ 
-          success: true, 
-          message: "Your message has been sent successfully! I'll get back to you soon.",
-          data: message 
-        });
-      } else {
-        console.log('⚠️ Email failed but message stored');
-        res.json({ 
-          success: false, 
-          message: "Your message was saved but email delivery failed. Please try contacting me via LinkedIn.",
-          data: message 
-        });
-      }
+      res.json(message);
     } catch (error) {
-      console.error('Contact form error:', error);
-      res.status(400).json({ 
-        success: false, 
-        error: "Invalid request data or email service error" 
-      });
+      res.status(400).json({ error: "Invalid request data" });
     }
   });
 
@@ -151,26 +121,4 @@ Honors & Awards:
 
   const httpServer = createServer(app);
   return httpServer;
-}
-
-// Smart chat function that tries Gemini first, then falls back to local Q&A
-async function generateChatResponse(message: string, resumeContent: string): Promise<string> {
-  try {
-    // First, try Gemini AI
-    const geminiResponse = await generateGeminiResponse(message, resumeContent);
-    
-    // If the response contains error messages, fall back to local Q&A
-    if (geminiResponse.includes("Sorry, I encountered an error") || 
-        geminiResponse.includes("AI service is not currently configured") ||
-        geminiResponse.includes("AI service configuration")) {
-      console.log("Gemini failed, falling back to local Q&A");
-      return await generateLocalResponse(message, resumeContent);
-    }
-    
-    return geminiResponse;
-  } catch (error) {
-    console.log("Gemini API error, falling back to local Q&A:", error);
-    // Fallback to local Q&A system
-    return await generateLocalResponse(message, resumeContent);
-  }
 }

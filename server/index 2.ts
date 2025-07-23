@@ -1,18 +1,3 @@
-import dotenv from "dotenv";
-import { resolve, dirname } from "path";
-import { fileURLToPath } from "url";
-
-// Get __dirname equivalent for ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-dotenv.config({ path: resolve(__dirname, "../.env") });
-
-// Debug: Log environment variables on startup
-console.log("Environment variables loaded:");
-console.log("EMAIL_USER:", process.env.EMAIL_USER ? "Set" : "NOT SET");
-console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "Set" : "NOT SET");
-
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
